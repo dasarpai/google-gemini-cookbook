@@ -31,7 +31,9 @@ database_url = os.getenv('DATABASE_URL')
 secret_key = os.getenv('SECRET_KEY')
 ```
 
-File name will by updated if the notebook runs successfully, partially or not at all. -Hari-Runs-Fully, -Hari-Runs-Part, -Hari-Runs-Fail.
+When the experiment is complete these notebooks cannot be saved in github with the same name (because of restriction on free account). <font color=red>
+Therefore the file name will by updated if the notebook runs successfully, partially or not at all. -Hari-Runs-Fully, -Hari-Runs-Part, -Hari-Runs-Fail.</font>
+
 
 # Expriment Status
 
@@ -89,10 +91,25 @@ File name will by updated if the notebook runs successfully, partially or not at
 1. google-gemini-cookbook\quickstarts\Models.ipynb
 1. google-gemini-cookbook\quickstarts\PDF_Files.ipynb
 1. google-gemini-cookbook\quickstarts\Prompting.ipynb
-1. google-gemini-cookbook\quickstarts\Safety.ipynb
+1. google-gemini-cookbook\quickstarts\Safety.ipynb - **Hari-Runs-Fully**   
+	model = genai.GenerativeModel('gemini-1.5-flash')   
+	response = model.generate_content(unsafe_prompt)   
+	response.candidates.finish_reason can be `FinishReason.STOP` or `FinishReason.SAFETY`   
+	response.candidates[0].finish_reason   
+	response.text   
+	response = model.generate_content(
+		unsafe_prompt,
+		safety_settings={
+			'HATE': 'BLOCK_NONE',
+			'HARASSMENT': 'BLOCK_NONE',
+			'SEXUAL' : 'BLOCK_NONE',
+			'DANGEROUS' : 'BLOCK_NONE'
+		})
+
+response.candidates[0].finish_reason
 1. google-gemini-cookbook\quickstarts\Streaming.ipynb
 1. google-gemini-cookbook\quickstarts\System_instructions.ipynb
-1. google-gemini-cookbook\quickstarts\Tuning.ipynb
+1. google-gemini-cookbook\quickstarts\Tuning.ipynb  **Hari-Runs-Fully**
 	- Goto https://console.cloud.google.com/
 	- Create google project
 	- Create google billing account and attach payment details
