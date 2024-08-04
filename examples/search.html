@@ -1,0 +1,81 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Opossum Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 292px;
+      height: auto;
+    }
+
+    form {
+      display: flex;
+      align-items: center;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px 0 0 5px;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background-color: #4285f4;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Opossum_2.jpg/292px-Opossum_2.jpg" alt="Opossum">
+    </header>
+
+    <form action="https://www.google.com/search" method="get">
+      <input type="text" name="q" placeholder="Search the web" required>
+      <input type="hidden" name="q" value="opossum ">
+      <input type="submit" value="Search">
+    </form>
+
+    <footer>
+      Powered by opossum search
+    </footer>
+  </div>
+</body>
+</html>
